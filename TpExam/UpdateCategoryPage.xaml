@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.UpdateCategoryPage">
+
+    <ContentPage.Resources>
+        <!-- Apply the common button style -->
+        <ResourceDictionary>
+            <Style x:Key="CommonButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#3498db" />
+                <Setter Property="TextColor" Value="#ffffff" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ecf0f1" Padding="10" Spacing="20">
+            <Frame CornerRadius="15" BackgroundColor="#ffffff" Padding="10" Margin="0,0,0,10">
+                <Entry x:Name="UpdatedCategoryName" Placeholder="Enter updated category name" BackgroundColor="#ecf0f1" Margin="0,0,0,10" />
+            </Frame>
+            <!-- Apply the common button style to the Update button -->
+            <Button Text="Update" Clicked="UpdateButton_Clicked" Style="{StaticResource CommonButtonStyle}" BackgroundColor="#2ecc71" TextColor="#ffffff" CornerRadius="10" FontSize="18" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

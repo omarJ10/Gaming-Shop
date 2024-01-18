@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.ProduitsPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ecf0f1" Padding="10" Spacing="10">
+            <!-- Add a Button to navigate to AjouteProduit.xaml -->
+            <Button Text="Add Product" Clicked="AddProductButton_Clicked" BackgroundColor="#3498db" TextColor="#ffffff" CornerRadius="8" FontSize="18" />
+
+            <!-- Add a ListView to display products -->
+            <ListView x:Name="ProductsListView" BackgroundColor="#ffffff" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="1" BackgroundColor="#ffffff" Spacing="10" Margin="0,0,0,0">
+                                <!-- Display the product image -->
+                                <Image Source="{Binding UrlImage}" WidthRequest="50" HeightRequest="50" />
+
+                                <!-- Display the product details -->
+                                
+                                <StackLayout>
+                                    <Label Text="{Binding Prix, StringFormat='Price: {0:C}'}" FontAttributes="Bold" TextColor="#e74c3c" />
+                                </StackLayout>
+                                <!-- Add Update and Delete buttons -->
+                                <Button Text="Update" Clicked="UpdateButton_Clicked" CommandParameter="{Binding .}" BackgroundColor="#3498db" TextColor="#ffffff" CornerRadius="8" FontSize="14" />
+                                <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}" BackgroundColor="#e74c3c" TextColor="#ffffff" CornerRadius="8" FontSize="14" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="🔙" Clicked="goToMainPage" FontSize="50" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" TextColor="#ffffff" />
+            <!-- Add other content as needed -->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

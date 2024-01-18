@@ -1,0 +1,31 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.AjouteCategorie">
+
+    <ContentPage.Content>
+        <StackLayout  Padding="10" Spacing="10">
+            <!-- Add a TableView to input category details -->
+            <TableView>
+                <TableRoot>
+                    <TableSection>
+                        <!-- EntryCell inside the Frame -->
+                        <ViewCell>
+                            <StackLayout Padding="1">
+                                <Entry x:Name="Name" Placeholder="Category Name" />
+                                <Label Text=""/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <!-- Add the "Ajouter" button -->
+            <Button x:Name="BtnAdd" Text="Ajouter" Clicked="BtnAdd_Clicked" BackgroundColor="#3498db" TextColor="#ffffff" CornerRadius="8" FontSize="18" />
+
+            <!-- Add the "Show Categories" button -->
+            <Button x:Name="ShowCategoriesButton" Text="Show Categories" Clicked="ShowCategoriesButton_Clicked" BackgroundColor="#3498db" TextColor="#ffffff" CornerRadius="8" FontSize="18" />
+            <Label Text="🎮" FontSize="70" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" TextColor="#ffffff" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
