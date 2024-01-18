@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.CommandsPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ecf0f1" Padding="10" Spacing="10">
+            <!-- Add a ListView to display commands -->
+            <ListView x:Name="CommandsListView" BackgroundColor="#ffffff" SeparatorVisibility="None" ItemSelected="CommandsListView_ItemSelected">
+                <!-- Define your ListView.ItemTemplate to display each command -->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="10" BackgroundColor="#ffffff" Spacing="5" Margin="0,0,0,5">
+                                <Label Text="{Binding NomClient}" TextColor="#2c3e50" FontSize="18" />
+                                <!-- Add more labels or other UI elements for additional properties -->
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="🔙" Clicked="goToMainPage" FontSize="50" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" TextColor="#ffffff" />
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

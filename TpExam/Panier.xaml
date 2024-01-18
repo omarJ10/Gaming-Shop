@@ -1,0 +1,49 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.Panier">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#3498db" Padding="20" Spacing="10">
+            <!-- Add a ListView to display products -->
+            <ListView x:Name="ProductsListView" ItemsSource="{Binding cartItems}" RowHeight="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="30" 
+                                   HorizontalOptions="Center" 
+                                   VerticalOptions="Center"
+                                   HasShadow="True"
+                                   IsClippedToBounds="True"
+                                   Padding="0">
+                                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" BackgroundColor="#ffffff" Padding="20" Margin="0,5,0,5" Spacing="10" >
+                                    <Image Source="{Binding Produit.UrlImage}" WidthRequest="50" HeightRequest="50" />
+                                    <!-- Display product details from associated Produit -->
+                                    <StackLayout Spacing="80" Padding="20" Margin="-100,0,30,0">
+                                        <Label Text="{Binding Produit.Nom}" FontAttributes="Bold" TextColor="#2c3e50" FontSize="18" />
+                                        <Label Text="{Binding Produit.Description}" FontAttributes="Italic" TextColor="#7f8c8d" FontSize="14" />
+                                    </StackLayout>
+                                    <Label Text="{Binding Produit.Prix, StringFormat='Price: {0:C}'}" FontAttributes="Bold" TextColor="#e74c3c" VerticalOptions="CenterAndExpand" />
+                                    <!-- Display and adjust quantity -->
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Spacing="5">
+                                        <Button Text="+" Clicked="IncreaseQuantity_Clicked" BackgroundColor="#3498db" TextColor="#ffffff" WidthRequest="40" HeightRequest="40" />
+                                        <Button Text="-" Clicked="DecreaseQuantity_Clicked" BackgroundColor="#3498db" TextColor="#ffffff" WidthRequest="40" HeightRequest="40" />
+                                        <Label Text="{Binding Quantite}" FontAttributes="Bold" TextColor="#2c3e50" VerticalOptions="CenterAndExpand" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Display the total for the entire cart -->
+            <Label x:Name="TotalLabel" Text="Total: " FontSize="20" FontAttributes="Bold" TextColor="#ffffff" Margin="0,20,0,0" />
+
+            <!-- Checkout button -->
+            <Button Text="Checkout" Clicked="CheckoutButton_Clicked" BackgroundColor="#ffffff" TextColor="#3498db" CornerRadius="10" />
+            <Label Text="🎮" FontSize="50" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

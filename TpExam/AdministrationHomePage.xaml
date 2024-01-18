@@ -1,0 +1,14 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.AdministrationHomePage"
+              BackgroundColor="#3498db">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20" VerticalOptions="CenterAndExpand">
+            <Button Text="Categories" Clicked="CategoriesButton_Clicked" BackgroundColor="#2ecc71" TextColor="#ffffff" CornerRadius="10" FontSize="18" HorizontalOptions="FillAndExpand" />
+            <Button Text="Produits" Clicked="ProduitsButton_Clicked" BackgroundColor="#e74c3c" TextColor="#ffffff" CornerRadius="10" FontSize="18" HorizontalOptions="FillAndExpand" />
+            <Button Text="Voir les Commandes" Clicked="VoirCommandesButton_Clicked" BackgroundColor="#f39c12" TextColor="#ffffff" CornerRadius="10" FontSize="18" HorizontalOptions="FillAndExpand" />
+            <Label Text="🎮" FontSize="50" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" TextColor="#ffffff" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

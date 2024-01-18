@@ -1,0 +1,26 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.CategoriesPage">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ecf0f1" Padding="10" Spacing="10">
+            <Button Text="Add Category" Clicked="AddCategoryButton_Clicked" BackgroundColor="#3498db" TextColor="#ffffff" CornerRadius="8" FontSize="18" />
+
+            <ListView x:Name="CategoriesListView" BackgroundColor="#ffffff" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="1" BackgroundColor="#ffffff" Spacing="10" Margin="0,0,0,0">
+                                <Label Text="{Binding Nom}" VerticalOptions="CenterAndExpand" TextColor="#2c3e50" FontSize="16" />
+                                <Button Text="Update" Clicked="UpdateButton_Clicked" CommandParameter="{Binding .}" BackgroundColor="#3498db" TextColor="#ffffff" CornerRadius="8" FontSize="14" />
+                                <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}" BackgroundColor="#e74c3c" TextColor="#ffffff" CornerRadius="8" FontSize="14" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="🔙" Clicked="goToMainPage" FontSize="50" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" TextColor="#ffffff" />
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

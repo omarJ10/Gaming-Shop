@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.HomePage">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#3498db" Padding="20">
+
+            <!-- Welcome Label -->
+            <Label Text="Welcome to GO's Shop!" Style="{StaticResource WelcomeLabelStyle}" HorizontalOptions="Center" />
+
+            <!-- Cool Icon -->
+            <Label Text="🎮" FontSize="100" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" />
+
+            <!-- Catchy Tagline -->
+            <Label Text="Discover the Latest in Gaming Goodies" TextColor="#ecf0f1" FontSize="18" HorizontalOptions="Center" Margin="0,10,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="WelcomeLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#ecf0f1" />
+                <Setter Property="FontSize" Value="36" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+</ContentPage>

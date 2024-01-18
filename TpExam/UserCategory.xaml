@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.UserCategory">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#3498db" Padding="20">
+
+            <!-- Title Label -->
+            <Label Text="Explore Categories" Style="{StaticResource TitleLabelStyle}" HorizontalOptions="Center" />
+
+            <!-- Categories ListView -->
+            <ListView x:Name="CategoriesListView" ItemSelected="OnCategorySelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Frame CornerRadius="30" 
+                                   HorizontalOptions="Center"  
+                                   VerticalOptions="Center"
+                                   HasShadow="True"
+                                   IsClippedToBounds="True"
+                                   Padding="0">
+                                <StackLayout BackgroundColor="#fff" Margin="30,5,30,5" WidthRequest="200">
+                                    <Label Text="{Binding Nom}" TextColor="#3498db" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="10,0,10,0" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                     
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="🎮" FontSize="50" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#ecf0f1" />
+                <Setter Property="FontSize" Value="36" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

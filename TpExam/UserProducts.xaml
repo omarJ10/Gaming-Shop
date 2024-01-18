@@ -1,0 +1,32 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.UserProducts">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#3498db" Padding="20" Spacing="10">
+            <!-- Add a ListView to display products -->
+            <ListView x:Name="ProductsListView" RowHeight="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="0" HasShadow="True">
+                                <Grid Padding="20">
+                                    <!-- Each item will consist of an Image, a title, a description, a price, and an add to cart button -->
+                                    <Image Source="{Binding UrlImage}" WidthRequest="80" HeightRequest="80" />
+                                    <StackLayout Grid.Column="1" VerticalOptions="Center" Spacing="5">
+                                        <Label Text="{Binding Nom}" FontAttributes="Bold" />
+                                        <Label Text="{Binding Description}" LineBreakMode="WordWrap" MaxLines="3" />
+                                        <Label Text="{Binding Prix, StringFormat='Price: {0:C}'}" FontAttributes="Bold" TextColor="#e74c3c" />
+                                        <Button Text="Add to cart" Clicked="AddToCartButton_Clicked" CommandParameter="{Binding .}" WidthRequest="120" HeightRequest="60"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="🎮" FontSize="50" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
